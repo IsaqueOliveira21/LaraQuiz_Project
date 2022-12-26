@@ -16,4 +16,17 @@ class QuizController extends Controller
     {
         return view('laraquiz.main');
     }
+
+    public function verificarRespostas(Request $request) {
+        $respostas = [];
+
+        switch ($request) {
+            case $request->questao1 == 'correta':
+                $respostas[] = 'ACERTOU 1';
+            case $request->questao2 == 'correta':
+                $respostas[] = 'ACERTOU 2';
+        }
+
+        dd($respostas);
+    }
 }
